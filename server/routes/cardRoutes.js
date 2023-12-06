@@ -3,7 +3,6 @@ const router = express.Router();
 const cardController = require('../controllers/cardController');
 
 // Define routes
-
 router.get('/', cardController.getAllCards);
 router.get('/:id', cardController.getCardById);
 router.post('/', cardController.createCard);
