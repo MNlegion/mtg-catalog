@@ -53,7 +53,7 @@ const cardController = {
     try {
       const updatedCard = await Card.findByIdAndUpdate(
         id,
-        { name, set, rarity, quantity },
+        { name, set, rarity, quantity, condition, foil, price, notes, date },
         { new: true } // Return the updated card
       );
 

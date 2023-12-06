@@ -8,12 +8,12 @@ const cardSchema = new mongoose.Schema({
     },
     rarity: {
         type: String,
-        required: true,
+        required: false,
         trim: true,
     },
     set: {
         type: String,
-        required: true,
+        required: false,
         trim: true,
     },
     quantity: {
@@ -23,17 +23,17 @@ const cardSchema = new mongoose.Schema({
     },
     condition: {
         type: String,
-        required: true,
+        required: false,
         trim: true,
     },
     foil: {
         type: Boolean,
-        required: true,
+        required: false,
         trim: true,
     },
     price: {
         type: Number,
-        required: true,
+        required: false,
         trim: true,
     },
     notes: {
