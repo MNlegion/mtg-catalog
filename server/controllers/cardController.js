@@ -1,4 +1,4 @@
-const Card = require('../models/cardModel');
+const Card = require("../models/cardModel");
 
 const cardController = {
   getAllCards: async (req, res) => {
@@ -15,7 +15,7 @@ const cardController = {
     try {
       const card = await Card.findById(id);
       if (!card) {
-        return res.status(404).json({ message: 'Card not found' });
+        return res.status(404).json({ message: "Card not found" });
       }
       res.json(card);
     } catch (error) {
@@ -24,7 +24,8 @@ const cardController = {
   },
 
   createCard: async (req, res) => {
-    const { name, set, rarity, quantity, condition, foil, price, notes, date } = req.body;
+    const { name, set, rarity, quantity, condition, foil, price, notes, date } =
+      req.body;
 
     try {
       const newCard = new Card({
@@ -48,7 +49,8 @@ const cardController = {
 
   updateCard: async (req, res) => {
     const { id } = req.params;
-    const { name, set, rarity, quantity, condition, foil, price, notes, date } = req.body;
+    const { name, set, rarity, quantity, condition, foil, price, notes, date } =
+      req.body;
 
     try {
       const updatedCard = await Card.findByIdAndUpdate(
@@ -58,7 +60,7 @@ const cardController = {
       );
 
       if (!updatedCard) {
-        return res.status(404).json({ message: 'Card not found' });
+        return res.status(404).json({ message: "Card not found" });
       }
 
       res.json(updatedCard);
@@ -74,10 +76,10 @@ const cardController = {
       const deletedCard = await Card.findByIdAndDelete(id);
 
       if (!deletedCard) {
-        return res.status(404).json({ message: 'Card not found' });
+        return res.status(404).json({ message: "Card not found" });
       }
 
-      res.json({ message: 'Card deleted successfully' });
+      res.json({ message: "Card deleted successfully" });
     } catch (error) {
       res.status(500).json({ message: error.message });
     }
