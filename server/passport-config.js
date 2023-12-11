@@ -4,7 +4,7 @@ const LocalStrategy = require('passport-local').Strategy;
 const JwtStrategy = require('passport-jwt').Strategy;
 const { ExtractJwt } = require('passport-jwt');
 const bcrypt = require('bcrypt');
-const User = require('./models/userModel'); // Create the User model
+const User = require('./models/userModel');
 
 // Local strategy for username/password authentication
 passport.use(
