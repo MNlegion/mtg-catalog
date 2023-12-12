@@ -3,7 +3,13 @@ const passport = require('passport');
 const authRoutes = require('./routes/api/authRoutes');
 const cardRoutes = require('./routes/api/cardRoutes');
 const connectDB = require('./config/connection');
-// const Card = require('./models/cardModel'); Do I need this?
+
+const cors = require('cors');
+const corsOptions ={
+  origin:'*', 
+  credentials:true,            //access-control-allow-credentials:true
+  optionSuccessStatus:200,
+};
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -15,6 +21,7 @@ connectDB();
 app.use(express.json());
 app.use(passport.initialize());
 require('./passport-config');
+app.use(cors(corsOptions)) // Use this after the variable declaration
 
 // Use auth routes
 app.use('/auth', authRoutes);

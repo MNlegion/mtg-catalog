@@ -1,15 +1,16 @@
 // src/App.jsx
 import React from 'react';
-import CardList from './components/CardList';
+import SignUpLogin from './components/auth/SignUpLogin';
 
 function App() {
   return (
     <div>
       <h1>MTG Catalog</h1>
-      <CardList />
+      <SignUpLogin />
     </div>
   );
 }
 
 export default App;
+
 
