@@ -4,12 +4,12 @@ const authRoutes = require('./routes/api/authRoutes');
 const cardRoutes = require('./routes/api/cardRoutes');
 const connectDB = require('./config/connection');
 
-const cors = require('cors');
-const corsOptions ={
-  origin:'*', 
-  credentials:true,            //access-control-allow-credentials:true
-  optionSuccessStatus:200,
-};
+// const cors = require('cors');
+// const corsOptions ={
+//   origin:'*', 
+//   credentials:true,            //access-control-allow-credentials:true
+//   optionSuccessStatus:200,
+// };
 
 const app = express();
 const PORT = process.env.PORT || 3001;

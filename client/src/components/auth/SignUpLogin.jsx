@@ -33,8 +33,18 @@ const SignUpLogin = () => {
   };
 
   const handleLogin = () => {
-    // Implement login logic here
-    console.log('Login data:', formData);
+    axios
+      .post('http://localhost:3001/auth/login', formData) // Replace with your backend API endpoint
+      .then((response) => {
+        // Handle successful login
+        console.log('Login successful:', response.data);
+        // Optionally, you can redirect the user to their dashboard or display a success message.
+      })
+      .catch((error) => {
+        // Handle login error
+        console.error('Login error:', error);
+        // Optionally, you can display an error message to the user.
+      });
   };
 
   return (
